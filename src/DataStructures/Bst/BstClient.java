@@ -10,8 +10,8 @@ public class BstClient {
 
 		tree.display();
 		System.out.println();
-		Bst other = new Bst(sa2);
-		other.display();
+		 Bst other = new Bst(sa2);
+		// other.display();
 
 		// tree.printInorderPredSucc(65);
 
@@ -19,17 +19,20 @@ public class BstClient {
 		// System.out.println(tree.inOrderSuccessor(37));
 		// System.out.println(tree.kthsmallest(2));
 
-		// tree.mergeTwoBsts(other);
+//		 tree.mergeTwoBsts(other);
+		 
+		 tree.mergeDisplayTwoBsts(other);
 		//
 		// tree.display();
 		// tree.spoilBst();
 		// tree.display();
 		// tree.correctBst();
 		// tree.display();
-//		System.out.println(tree.findCeilValue(72));
-		
-		tree.mergeTwoBst(other);
-		tree.display();
+		// System.out.println(tree.findCeilValue(72));
+
+		// tree.mergeTwoBst(other);
+		// tree.display();
+//		System.out.println(tree.inOrderPredecessorRec(62));
 
 	}
 

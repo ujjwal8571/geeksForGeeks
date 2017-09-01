@@ -238,6 +238,7 @@ public class Bst {
 		int successor = Integer.MAX_VALUE;
 	}
 
+	// O(n) code
 	public void printInorderPredSucc(int val) {
 		inOrderPair pair = new inOrderPair();
 		printInorderPredSuccessorHelper(root, val, pair);
@@ -288,33 +289,74 @@ public class Bst {
 		return node;
 	}
 
-	public int inOrderSuccessor(int val) {
+	public int inOrderPredecessorIter(int val) {
 
-		Node ans = inOrderSuccessorHelper(root, val);
+		Node node = root;
+		Node pred = null;
+		while (node != null) {
 
-		if (ans != null) {
-			return ans.data;
-		} else {
-			return -1;
+			if (node.data < val) {
+				pred = node;
+				node = node.right;
+			} else if (node.data > val) {
+				node = node.left;
+			} else {
+
+				if (node.left != null) {
+
+					Node lNode = node.left;
+					pred = lNode;
+					while (pred.right != null) {
+						pred = pred.right;
+					}
+
+					return pred.data;
+
+				} else {
+					return pred.data;
+				}
+
+			}
+
 		}
+
+		return -1;
+
 	}
 
-	private Node inOrderSuccessorHelper(Node node, int val) {
+	public int inOrderPredecessorRec(int val) {
+
+		return inOrderPredecessorRecHelper(root, null, val);
+	}
+
+	private int inOrderPredecessorRecHelper(Node node, Node pred, int val) {
 
 		if (node == null) {
-			return null;
+			return -1;
 		}
 
-		if (node.data == val) {
-			return node.right;
-		}
+		if (node.data < val) {
+			return inOrderPredecessorRecHelper(node.right, node, val);
 
-		else if (node.data < val) {
-			return inOrderSuccessorHelper(node.right, val);
-		}
+		} else if (node.data > val) {
+			return inOrderPredecessorRecHelper(node.left, pred, val);
 
-		else {
-			return inOrderSuccessorHelper(node.left, val);
+		} else {
+
+			if (node.left != null) {
+
+				Node lNode = node.left;
+				pred = lNode;
+				while (pred.right != null) {
+					pred = pred.right;
+				}
+
+				return pred.data;
+
+			} else {
+				return pred.data;
+			}
+
 		}
 
 	}
@@ -452,7 +494,7 @@ public class Bst {
 			int temp = pair.first.data;
 			pair.first.data = pair.middle.data;
 			pair.middle.data = temp;
-
+			
 		}
 
 	}

@@ -130,13 +130,6 @@ public class BinaryTree {
 		}
 	}
 
-	public void BfsDisplay() {
-
-		System.out.println(root.data);
-
-		bfsDsiplayHelper(root);
-	}
-
 	public void printNodesAtkDistance(int k) {
 
 		printNodesAtKDistHelper(root, 0, k);
@@ -154,27 +147,6 @@ public class BinaryTree {
 
 		printNodesAtKDistHelper(node.left, depth + 1, k);
 		printNodesAtKDistHelper(node.right, depth + 1, k);
-
-	}
-
-	private void bfsDsiplayHelper(Node node) {
-
-		if (node == null) {
-			return;
-		}
-
-		if (node.left != null) {
-			System.out.println(node.left.data);
-
-		}
-
-		if (node.right != null) {
-			System.out.println(node.right.data);
-
-		}
-
-		bfsDsiplayHelper(node.left);
-		bfsDsiplayHelper(node.right);
 
 	}
 
