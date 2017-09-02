@@ -45,7 +45,7 @@ public class BoundaryTraversal extends BaseTree {
 	public static void printLeaves(Node node) {
 
 		if (node == null) {
-			retu	rn;
+			return;
 		}
 
 		if (node.left == null && node.right == null) {
