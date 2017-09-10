@@ -16,4 +16,15 @@ public class BaseTree {
 
 		return node.left == null && node.right == null;
 	}
+
+	public static void preOrder(Node node) {
+
+		if (node == null) {
+			return;
+		}
+
+		System.out.println(node.data);
+		preOrder(node.left);
+		preOrder(node.right);
+	}
 }
