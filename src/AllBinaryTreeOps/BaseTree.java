@@ -17,14 +17,14 @@ public class BaseTree {
 		return node.left == null && node.right == null;
 	}
 
-	public static void preOrder(Node node) {
+	public static void traversal(Node node) {
 
 		if (node == null) {
 			return;
 		}
 
-		System.out.println(node.data);
-		preOrder(node.left);
-		preOrder(node.right);
+		traversal(node.left);
+		System.out.print(node.data + ", ");
+		traversal(node.right);
 	}
 }

@@ -494,7 +494,7 @@ public class Bst {
 			int temp = pair.first.data;
 			pair.first.data = pair.middle.data;
 			pair.middle.data = temp;
-			
+
 		}
 
 	}
