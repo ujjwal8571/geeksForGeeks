@@ -9,6 +9,7 @@ public class GroupShiftedString {
 		String[] arr = { "acd", "dfg", "wyz", "yab", "mop", "bdfh", "a", "x", "moqs" };
 
 		printGroupShiftedStrings(arr);
+
 	}
 
 	public static void printGroupShiftedStrings(String[] arr) {
@@ -45,5 +46,4 @@ public class GroupShiftedString {
 			System.out.println(hm.get(key));
 		}
 	}
-
 }
