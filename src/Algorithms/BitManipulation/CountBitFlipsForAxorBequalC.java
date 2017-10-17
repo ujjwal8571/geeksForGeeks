@@ -8,6 +8,10 @@ public class CountBitFlipsForAxorBequalC {
 		String c = "10011";
 
 		System.out.println(countBitFlips2(a, b, c));
+		
+//		int bit = 0b0011;
+//		System.out.println(bit);
+		
 
 	}
 
@@ -38,8 +42,7 @@ public class CountBitFlipsForAxorBequalC {
 			if (a.charAt(i) == b.charAt(i) && c.charAt(i) == '1') {
 				rv++;
 			}
-			
-			
+
 			if (a.charAt(i) != b.charAt(i) && c.charAt(i) == '0') {
 				rv++;
 			}

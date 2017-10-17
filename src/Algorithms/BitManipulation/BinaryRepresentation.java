@@ -4,7 +4,7 @@ public class BinaryRepresentation {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		printBinary(10);
+		printBinary(130);
 	}
 
 	public static void printBinary(int num) {
